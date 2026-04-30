@@ -555,3 +555,7 @@ class Client:
         response = self.sendRequest("config.json", method="GET")
         saveJson(response, 'config.json')
         return response
+
+    def getLanguagepatch(self):
+        response = self.sendRequest("player/languagepatch")
+        return response
