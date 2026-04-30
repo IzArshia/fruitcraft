@@ -546,3 +546,7 @@ class Client:
 
     def solveCaptcha(self, resp: int):
         return self.sendRequest("bot/challengeresponse", {"resp": resp})
+
+    def getErrorsMessages(self, lang_id: str = "fa-IR"):
+        response = self.sendRequest("error/messages", {"lang_id": lang_id})
+        return response
