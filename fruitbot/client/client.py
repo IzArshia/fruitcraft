@@ -550,3 +550,8 @@ class Client:
     def getErrorsMessages(self, lang_id: str = "fa-IR"):
         response = self.sendRequest("error/messages", {"lang_id": lang_id})
         return response
+
+    def getConfig(self):
+        response = self.sendRequest("config.json", method="GET")
+        saveJson(response, 'config.json')
+        return response
